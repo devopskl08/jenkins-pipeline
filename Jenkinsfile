@@ -2,10 +2,13 @@ pipeline{
     agent{
         label 'slave-1'
     }
-    stages{
+    steps{
         stage('first build'){
             steps{
                 echo "hii"
+                sleep 20
+                echo "sleep done"
+                
             }
         }
         stage('groovy'){
@@ -20,4 +23,4 @@ pipeline{
             }
         }
     }
-} 
+}
