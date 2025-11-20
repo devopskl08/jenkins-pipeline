@@ -2,27 +2,14 @@ pipeline{
     agent{
         label 'slave-1'
     }
+    tools{
+        maven 'MAVEN_3.8.9'
+    }
     stages{
-        stage('test'){
+        stage ("maven"){
             steps{
-                  echo "test env"
-            }
-        }
-        stage('dev'){
-            steps{
-                echo "dev env"
-            }
-        }
-        stage('stageenv'){
-            steps{
-                echo "stage env"
-            }
-        }
-        stage ('prodenv'){
-            steps{
-                timeout (time: 5 , unit: 'SECONDS' ){
-                    echo "execote pprod env"
-                }
+                echo "hello from maven"
+                sh "mvn --version"
             }
         }
     }
