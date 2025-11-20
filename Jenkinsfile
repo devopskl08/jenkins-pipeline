@@ -8,8 +8,9 @@ pipeline{
                 retry(3){
                 echo "welcome"
                 error "failed"
-            }}
+            }
             echo "3 tries"
+            }
         }
         stage('second scans'){
         steps{
