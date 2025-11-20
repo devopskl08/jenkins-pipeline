@@ -3,24 +3,17 @@ pipeline{
         label 'slave-1'
     }
     stages{
-        stage('first build'){
+        stage('firststage'){
             steps{
-                echo "hii"
-                sleep 20
-                echo "sleep done"
-                
+                retry(3)
+                echo "welcome"
+                error "failed"
             }
+            echo "After 3 trials not worked"
         }
-        stage('groovy'){
-            steps{
-                script{
-                    def course = "k8s"
-                    if (course == "k8s")
-                    println("thanks!!")
-                    else
-                    println("do enroll")
-                }
-            }
-        }
+        stage('second scans'){
+        steps{
+            echo "normal"
+        }}
     }
 }
