@@ -13,7 +13,7 @@ pipeline{
                 echo "dev env"
             }
         }
-        stage(stage env){
+        stage('env'){
             steps{
                 echo "stage env"
             }
