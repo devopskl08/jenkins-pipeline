@@ -5,11 +5,11 @@ pipeline{
     stages{
         stage('firststage'){
             steps{
-                retry(3)
+                retry(3){
                 echo "welcome"
                 error "failed"
-            }
-            
+            }}
+            echo "3 tries"
         }
         stage('second scans'){
         steps{
