@@ -13,12 +13,12 @@ pipeline{
                 echo "dev env"
             }
         }
-        stage('env'){
+        stage('stageenv'){
             steps{
                 echo "stage env"
             }
         }
-        stage (prod env){
+        stage ('prodenv'){
             steps{
                 timeout (time: 5 , units: 'SECONDS' ){
                     echo "execote pprod env"
