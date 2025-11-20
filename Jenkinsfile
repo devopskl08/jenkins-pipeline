@@ -2,7 +2,7 @@ pipeline{
     agent{
         label 'slave-1'
     }
-    steps{
+    stages{
         stage('first build'){
             steps{
                 echo "hii"
