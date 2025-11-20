@@ -3,18 +3,27 @@ pipeline{
         label 'slave-1'
     }
     stages{
-        stage('firststage'){
+        stage('test'){
             steps{
-                retry(3){
-                echo "welcome"
-                error "failed"
-            }
-            echo "3 tries"
+                  echo "test env"
             }
         }
-        stage('second scans'){
-        steps{
-            echo "normal"
-        }}
+        stage('dev'){
+            steps{
+                echo "dev env"
+            }
+        }
+        stage(stage env){
+            steps{
+                echo "stage env"
+            }
+        }
+        stage (prod env){
+            steps{
+                timeout (time: 5 , units: 'SECONDS' ){
+                    echo "execote pprod env"
+                }
+            }
+        }
     }
 }
