@@ -9,6 +9,7 @@ pipeline{
              }
        }
       stage('new stage'){
-        echo "hello"
+        steps{
+        echo "hello"}
             }
 } 
