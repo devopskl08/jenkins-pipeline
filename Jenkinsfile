@@ -10,6 +10,8 @@ pipeline{
        }
       stage('new stage'){
         steps{
-        echo "hello"}
+        echo "hello"
             }
+      }
+    }
 } 
