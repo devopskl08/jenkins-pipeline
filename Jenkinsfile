@@ -9,7 +9,7 @@ pipeline{
                 echo "welcome"
                 error "failed"
             }
-            echo "After 3 trials not worked"
+            
         }
         stage('second scans'){
         steps{
