@@ -1,10 +1,12 @@
 pipeline{
-  agent any
+  agent {
+    label 'slave-1'
+  }
     stages{
-      stage('hostname'{
+      stage('hostname'){
             steps{
                sh 'hostname -i'
              }
        }
             }
-            }
+} 
