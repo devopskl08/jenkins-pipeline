@@ -20,7 +20,7 @@ pipeline{
         }
         stage ('prodenv'){
             steps{
-                timeout (time: 5 , units: 'SECONDS' ){
+                timeout (time: 5 , unit: 'SECONDS' ){
                     echo "execote pprod env"
                 }
             }
