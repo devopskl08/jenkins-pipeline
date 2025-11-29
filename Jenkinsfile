@@ -2,12 +2,18 @@ pipeline{
     agent{
         label 'slave-1'
     }
+    parameters{
+        string(
+            name: 'PERSON'
+            defaultvalue: 'likhitha'
+            description: 'whats your name'
+        )
+    }
     stages{
-        stage ('prpd Env'){
+        stage('parameterstage'){
             steps{
-                echo "deploying to production"
+                echo "hello, ${params.PERSON}"
             }
-
         }
     }
 }
