@@ -27,7 +27,7 @@ pipeline{
     stages{
         stage('parameterstage'){
             steps{
-                echo "hello, ${params.PERSON}",
+                echo "hello, ${params.PERSON}"
                 echo "Release notes, ${params.RELEASEDETAILS}"
             }
         }
