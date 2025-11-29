@@ -19,7 +19,7 @@ pipeline{
             description: 'toogle the value'
         )
         text(
-            name: 'RELEASE DETAILS',
+            name: 'RELEASEDETAILS',
             defaultValue: '',
             description: 'enter some details about todays release'
         )
@@ -28,7 +28,7 @@ pipeline{
         stage('parameterstage'){
             steps{
                 echo "hello, ${params.PERSON}",
-                echo "Release notes, ${params.RELEASE DETAILS}"
+                echo "Release notes, ${params.RELEASEDETAILS}"
             }
         }
     }
