@@ -8,11 +8,27 @@ pipeline{
             defaultValue: 'likhitha',
             description: 'whats your name'
         )
+        choice(
+            name: 'CHOICE',
+            choices: ['one','two','three'],
+            description: 'piick some number  from below'
+        )
+        booleanParam(
+            name: 'TOOGLE',
+            defaultValue: true,
+            description: 'toogle the value'
+        )
+        text(
+            name: 'RELEASE DETAILS',
+            defaultValue: '',
+            description: 'enter some details about todays release'
+        )
     }
     stages{
         stage('parameterstage'){
             steps{
-                echo "hello, ${params.PERSON}"
+                echo "hello, ${params.PERSON}",
+                echo "Release notes, ${params.RELEASE DETAILS}"
             }
         }
     }
