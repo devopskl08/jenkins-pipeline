@@ -2,34 +2,28 @@ pipeline{
     agent{
         label 'slave-1'
     }
-    parameters{
-        string(
-            name: 'PERSON',
-            defaultValue: 'likhitha',
-            description: 'whats your name'
-        )
-        choice(
-            name: 'CHOICE',
-            choices: ['one','two','three'],
-            description: 'piick some number  from below'
-        )
-        booleanParam(
-            name: 'TOOGLE',
-            defaultValue: true,
-            description: 'toogle the value'
-        )
-        text(
-            name: 'RELEASEDETAILS',
-            defaultValue: '',
-            description: 'enter some details about todays release'
-        )
-    }
     stages{
-        stage('parameterstage'){
-            steps{
-                echo "hello, ${params.PERSON}"
-                echo "Release notes, ${params.RELEASEDETAILS}"
-            }
+        stage('Build'){
+            echo "building Application"
+        }
+        stage('codeAnalysis'){
+            echo "scanning the code"
+        }
+        stage('dockerbuildpush'){
+            echo "build and push docker images"
+        }
+        stage('deply to dev'){
+            echo "deploying to dev application"
+        }
+        stage('deply to test'){
+            echo "deploying to test application"
+        }
+        stage('deply to stage'){
+            echo "deploying to stage application"
+        }
+        stage('deply to prod'){
+            echo "deploying to prod application"
         }
     }
+
 }
